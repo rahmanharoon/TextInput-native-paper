@@ -1,21 +1,22 @@
-import { StatusBar } from 'expo-status-bar';
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { TextInput } from "react-native-paper";
 
 export default function App() {
+  const [text, setText] = React.useState("");
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <TextInput
+      label="Email"
+      value={text}
+      mode="outlined"
+      onChangeText={(text) => setText(text)}
+      theme={{ roundness: 30 }}
+      style={{
+        width: "95%",
+        alignSelf: "center",
+        marginTop: 100,
+        paddingRight: 15,
+      }}
+    />
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
